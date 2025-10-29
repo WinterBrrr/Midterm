@@ -1,30 +1,30 @@
 # LibrarySystem (Transaction Processing System)
 
-## Project title
+## Project title 📚
 
 LibrarySystem — Transaction Processing System for a small library (Laravel)
 
-## Description / Overview
+## Description / Overview 📝
 
 LibrarySystem is a lightweight Laravel application that manages books, students (borrowers), and borrow/return transactions. It demonstrates typical library workflows: adding books and students, borrowing books, returning books, and viewing reports on outstanding loans.
 
-## Objectives
+## Objectives 🎯
 
 - Provide CRUD interfaces for Books, Students, and Transactions.
 - Track which student borrowed which book and when it is due.
 - Support a simple borrow/return workflow (mark returned, track return date).
 - Offer a small dashboard with basic stats for librarians.
 
-## Features / Functionality
+## Features / Functionality ✨
 
-- Book management: add, edit, delete books (title, author, ISBN, copies available).
-- Student management: register students with an auto-generated student ID.
-- Transaction management: create borrow transactions, edit returned date, delete transactions.
-- Return workflow: list unreturned books and mark them returned quickly.
-- Dashboard: total books, total students, pending/overdue loans.
-- Blade templates with simple Tailwind-based styling.
+- 📘 Book management: add, edit, delete books (title, author, ISBN, copies available).
+- 🧑‍🎓 Student management: register students with an auto-generated student ID.
+- 🔁 Transaction management: create borrow transactions, edit returned date, delete transactions.
+- ↩️ Return workflow: list unreturned books and mark them returned quickly.
+- 📊 Dashboard: total books, total students, pending/overdue loans.
+- 🎨 Blade templates with simple Tailwind-based styling.
 
-## Installation Instructions
+## Installation Instructions ⚙️
 
 Prerequisites:
 - PHP 8.x (as required by your Laravel version)
@@ -62,7 +62,7 @@ Notes:
 - If you use MySQL/Postgres, update `.env` DB settings and create the database before running `php artisan migrate`.
 - If migrations fail due to existing schema, consider `php artisan migrate:fresh --seed` while developing.
 
-## Usage
+## Usage 🚀
 
 1. Visit the app home (dashboard) to see summary stats.
 2. Use the `Books` menu to add or manage books.
@@ -70,7 +70,7 @@ Notes:
 4. Use the `Transactions` menu to record a borrow (select book and student, set borrowed/due dates).
 5. To return a book, either edit the transaction and set the Returned At date.
 
-## Screenshots / Code Snippets
+## Screenshots / Code Snippets 🖼️
 
 Example: Create a transaction (Blade partial snippet)
 
@@ -89,6 +89,7 @@ Example: Create a transaction (Blade partial snippet)
 Screenshots
 
 Below are the UI screenshots
+
 Dashboard 
 ![Dashboard screenshot](docs/screenshots/dashboard.png)
 
@@ -103,11 +104,11 @@ Transaction
 
 
 
-## Contributors
+## Contributors 👥
 
-- Earl Roland E. Peralta(WinterBrrr) — primary developer
+- Earl Roland E. Peralta (WinterBrrr) — primary developer
 
-## License
+## License 🔒
 
 This project uses the MIT License by default. See `LICENSE` for details.
 
