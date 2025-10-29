@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300">
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+  <text x="40" y="44" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#111827">Students List</text>
+  <g fill="#fff" stroke="#e5e7eb">
+    <rect x="40" y="72" width="1100" height="56" rx="6" fill="#ffffff"/>
+    <rect x="40" y="136" width="1100" height="56" rx="6" fill="#ffffff"/>
+  </g>
+  <text x="80" y="108" font-size="18" fill="#374151">Student ID</text>
+  <text x="240" y="108" font-size="18" fill="#374151">First Name</text>
+  <text x="420" y="108" font-size="18" fill="#374151">Last Name</text>
+  <text x="600" y="108" font-size="18" fill="#374151">Enrolled Year</text>
+  <text x="780" y="108" font-size="18" fill="#374151">Department</text>
+  <text x="980" y="108" font-size="18" fill="#374151">Course</text>
+  <text x="80" y="172" font-size="16" fill="#6b7280">22100012</text>
+  <text x="240" y="172" font-size="16" fill="#6b7280">Jyian</text>
+  <text x="420" y="172" font-size="16" fill="#6b7280">Soriano</text>
+  <text x="600" y="172" font-size="16" fill="#6b7280">2022</text>
+  <text x="780" y="172" font-size="16" fill="#6b7280">Information</text>
+  <text x="980" y="172" font-size="16" fill="#6b7280">BSIT</text>
+  <text x="40" y="260" font-size="12" fill="#6b7280">(Placeholder based on provided Students List screenshot.)</text>
+</svg>

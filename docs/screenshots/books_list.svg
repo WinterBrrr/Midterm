@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300">
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+  <text x="40" y="44" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#111827">Books List</text>
+  <g fill="#fff" stroke="#e5e7eb">
+    <rect x="40" y="72" width="1100" height="56" rx="6" fill="#ffffff"/>
+    <rect x="40" y="136" width="1100" height="56" rx="6" fill="#ffffff"/>
+  </g>
+  <text x="80" y="108" font-size="18" fill="#374151">Title</text>
+  <text x="320" y="108" font-size="18" fill="#374151">Author</text>
+  <text x="520" y="108" font-size="18" fill="#374151">ISBN</text>
+  <text x="700" y="108" font-size="18" fill="#374151">Published Year</text>
+  <text x="920" y="108" font-size="18" fill="#374151">Copies</text>
+  <text x="80" y="172" font-size="16" fill="#6b7280">qwe</text>
+  <text x="320" y="172" font-size="16" fill="#6b7280">qwe</text>
+  <text x="520" y="172" font-size="16" fill="#6b7280">0</text>
+  <text x="700" y="172" font-size="16" fill="#6b7280">2001</text>
+  <text x="920" y="172" font-size="16" fill="#6b7280">1</text>
+  <text x="40" y="260" font-size="12" fill="#6b7280">(This is a placeholder image created from the provided UI screenshot.)</text>
+</svg>

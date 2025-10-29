@@ -1,61 +1,120 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# LibrarySystem (Transaction Processing System)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Project title
 
-## About Laravel
+LibrarySystem — Transaction Processing System for a small library (Laravel)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Description / Overview
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+LibrarySystem is a lightweight Laravel application that manages books, students (borrowers), and borrow/return transactions. It demonstrates typical library workflows: adding books and students, borrowing books, returning books, and viewing reports on outstanding loans.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Objectives
 
-## Learning Laravel
+- Provide CRUD interfaces for Books, Students, and Transactions.
+- Track which student borrowed which book and when it is due.
+- Support a simple borrow/return workflow (mark returned, track return date).
+- Offer a small dashboard with basic stats for librarians.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Features / Functionality
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- Book management: add, edit, delete books (title, author, ISBN, copies available).
+- Student management: register students with an auto-generated student ID.
+- Transaction management: create borrow transactions, edit returned date, delete transactions.
+- Return workflow: list unreturned books and mark them returned quickly.
+- Dashboard: total books, total students, pending/overdue loans.
+- Blade templates with simple Tailwind-based styling.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Installation Instructions
 
-## Laravel Sponsors
+Prerequisites:
+- PHP 8.x (as required by your Laravel version)
+- Composer
+- SQLite (or MySQL/Postgres — update `.env` accordingly)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Quick setup (Windows PowerShell):
 
-### Premium Partners
+```powershell
+# clone the repo (if not already)
+git clone <your-repo-url> librarySystem
+cd librarySystem
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+# install PHP dependencies
+composer install
 
-## Contributing
+# copy env and generate key
+copy .env.example .env
+php artisan key:generate
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# ensure database file exists (for SQLite)
+# (if using SQLite) create database file
+if (-Not (Test-Path database\database.sqlite)) { New-Item database\database.sqlite -ItemType File }
 
-## Code of Conduct
+# run migrations and seed (creates sample books, students, transactions)
+php artisan migrate --seed
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# serve the app
+php artisan serve
 
-## Security Vulnerabilities
+# open http://127.0.0.1:8000
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Notes:
+- If you use MySQL/Postgres, update `.env` DB settings and create the database before running `php artisan migrate`.
+- If migrations fail due to existing schema, consider `php artisan migrate:fresh --seed` while developing.
+
+## Usage
+
+1. Visit the app home (dashboard) to see summary stats.
+2. Use the `Books` menu to add or manage books.
+3. Use the `Students` menu to register borrowers (student IDs are auto-generated).
+4. Use the `Transactions` menu to record a borrow (select book and student, set borrowed/due dates).
+5. To return a book, either edit the transaction and set the Returned At date, or use the Return list to mark it returned.
+
+## Screenshots / Code Snippets
+
+Example: Create a transaction (Blade partial snippet)
+
+```blade
+<!-- resources/views/transactions/create.blade.php (excerpt) -->
+<form action="{{ route('transactions.store') }}" method="POST">
+	@csrf
+	<select name="book_id">@foreach($books as $book)<option value="{{ $book->id }}">{{ $book->title }}</option>@endforeach</select>
+	<select name="student_id">@foreach($students as $s)<option value="{{ $s->id }}">{{ $s->student_id }} - {{ $s->first_name }}</option>@endforeach</select>
+	<input type="date" name="borrowed_at" required />
+	<input type="date" name="due_at" required />
+	<button type="submit">Borrow Book</button>
+</form>
+```
+
+Screenshots
+
+Below are the UI screenshots (placeholders created from the provided images). Replace these with higher-resolution PNG/JPG screenshots if you prefer — place them under `docs/screenshots/` and update the filenames in this README.
+
+![Dashboard screenshot](docs/screenshots/dashboard.png)
+
+![Books list screenshot](docs/screenshots/book.png)
+
+![Students list screenshot](docs/screenshots/student.png)
+
+![Transactions list screenshot](docs/screenshots/transaction.png)
+
+To replace any image, add the new file into `docs/screenshots/` (for example `dashboard.png`) and update the image path above accordingly.
+
+## Contributors
+
+- Earl (WinterBrrr) — primary developer
+
+Feel free to add yourself by editing this file and opening a PR.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project uses the MIT License by default. See `LICENSE` for details.
+
+---
+
+If you want, I can:
+
+- Add a small `docs/` folder and put example screenshots there.
+- Create a short CONTRIBUTING.md with git workflow recommendations.
+
+Let me know which of those you'd like next.

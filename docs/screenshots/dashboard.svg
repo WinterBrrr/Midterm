@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <rect width="100%" height="100%" fill="#f3f4f6"/>
+  <g font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" fill="#374151">
+    <text x="60" y="80" font-size="34" font-weight="700">LibrarySystem — Dashboard (placeholder)</text>
+    <rect x="60" y="110" width="240" height="120" rx="8" fill="#ffffff" stroke="#e5e7eb" />
+    <text x="80" y="155" font-size="20">Total Books</text>
+    <text x="80" y="190" font-size="28" font-weight="700">123</text>
+
+    <rect x="340" y="110" width="240" height="120" rx="8" fill="#ffffff" stroke="#e5e7eb" />
+    <text x="360" y="155" font-size="20">Total Students</text>
+    <text x="360" y="190" font-size="28" font-weight="700">45</text>
+
+    <rect x="620" y="110" width="240" height="120" rx="8" fill="#ffffff" stroke="#e5e7eb" />
+    <text x="640" y="155" font-size="20">Pending Loans</text>
+    <text x="640" y="190" font-size="28" font-weight="700">8</text>
+
+    <text x="60" y="280" font-size="18" fill="#6b7280">This is a placeholder image. Replace with a real screenshot by adding an image at <tspan font-family="monospace">docs/screenshots/dashboard.svg</tspan> or a PNG/JPG and updating the README.</text>
+  </g>
+</svg>
