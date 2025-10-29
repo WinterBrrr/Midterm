@@ -68,7 +68,7 @@ Notes:
 2. Use the `Books` menu to add or manage books.
 3. Use the `Students` menu to register borrowers (student IDs are auto-generated).
 4. Use the `Transactions` menu to record a borrow (select book and student, set borrowed/due dates).
-5. To return a book, either edit the transaction and set the Returned At date.
+5. To return a book edit the transaction and set the Returned At date.
 
 ## Screenshots / Code Snippets 🖼️
 
