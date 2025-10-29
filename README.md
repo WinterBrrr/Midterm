@@ -68,7 +68,7 @@ Notes:
 2. Use the `Books` menu to add or manage books.
 3. Use the `Students` menu to register borrowers (student IDs are auto-generated).
 4. Use the `Transactions` menu to record a borrow (select book and student, set borrowed/due dates).
-5. To return a book, either edit the transaction and set the Returned At date, or use the Return list to mark it returned.
+5. To return a book, either edit the transaction and set the Returned At date.
 
 ## Screenshots / Code Snippets
 
@@ -88,23 +88,24 @@ Example: Create a transaction (Blade partial snippet)
 
 Screenshots
 
-Below are the UI screenshots (placeholders created from the provided images). Replace these with higher-resolution PNG/JPG screenshots if you prefer — place them under `docs/screenshots/` and update the filenames in this README.
-
+Below are the UI screenshots
+Dashboard 
 ![Dashboard screenshot](docs/screenshots/dashboard.png)
 
+Books
 ![Books list screenshot](docs/screenshots/book.png)
 
+Students
 ![Students list screenshot](docs/screenshots/student.png)
 
+Transaction
 ![Transactions list screenshot](docs/screenshots/transaction.png)
 
-To replace any image, add the new file into `docs/screenshots/` (for example `dashboard.png`) and update the image path above accordingly.
+
 
 ## Contributors
 
-- Earl (WinterBrrr) — primary developer
-
-Feel free to add yourself by editing this file and opening a PR.
+- Earl Roland E. Peralta(WinterBrrr) — primary developer
 
 ## License
 
@@ -112,9 +113,4 @@ This project uses the MIT License by default. See `LICENSE` for details.
 
 ---
 
-If you want, I can:
 
-- Add a small `docs/` folder and put example screenshots there.
-- Create a short CONTRIBUTING.md with git workflow recommendations.
-
-Let me know which of those you'd like next.
